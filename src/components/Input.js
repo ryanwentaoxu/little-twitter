@@ -3,9 +3,9 @@ import { PhotoIcon, FaceSmileIcon } from "@heroicons/react/24/outline"
 
 export default function Input() {
   return (
-    <div className="flex border-b border-gray-200 p-3 space-x-3">
+    <div className="flex  border-b border-gray-200 p-3 space-x-3">
       <img src="https://tether.com/wp-content/uploads/2022/04/curry-brand-2l.png" className="rounded-full h-11 w-11" alt="user-img" />
-      <div className="w-full divide-y divde-gray-200">
+      <div className="w-full divide-y divide-gray-200">
         <div className="">
           <textarea className="w-full border-none focus:ring-0 text-lg placeholder-gray-700 tracking-wide min-h-[50px] text-gray-700" rows="2" placeholder="Share your mind!"></textarea>
         </div>
