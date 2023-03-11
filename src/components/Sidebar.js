@@ -8,7 +8,7 @@ export default function Sidebar() {
 
       {/* little twitter logo */}
       <div className="hoverEffect hover:bg-blue-100 xl:px-1">
-        <Image width="50" height="50" src="https://help.twitter.com/content/dam/help-twitter/brand/logo.png"></Image>
+        <Image width="50" height="50" src="https://help.twitter.com/content/dam/help-twitter/brand/logo.png" alt="here"></Image>
       </div>
 
       {/* little menu */}
