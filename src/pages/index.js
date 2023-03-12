@@ -6,8 +6,9 @@ import Widgets from '@/components/Widgets'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({nr}) 
+export default function Home({nr, rur}) 
 {
+  // console.log(rur);
   return (
     <>
       <Head>
@@ -25,7 +26,7 @@ export default function Home({nr})
         <Feed />
 
         {/* Widgets */}
-        <Widgets nr={nr?.articles} />
+        <Widgets nr={nr?.articles} rur={rur?.results || null} />
         {/* Modal */}
       </main>
     </>
@@ -37,9 +38,19 @@ export default function Home({nr})
 
 export async function getServerSideProps() {
   const nr = await fetch("https://saurav.tech/NewsAPI/top-headlines/category/business/us.json").then((res)=>res.json());
+
+  // https://randomuser.me/api/?results=5000
+  // https://randomuser.me/api/?results=30&inc=name,login,%20picture
+  // name, login, pictures
+
+  // who can be followed
+  const rur = await fetch(
+    "https://randomuser.me/api/?results=30&inc=name,login,%20picture"
+  ).then((res)=>res.json());
   return {
     props: {
       nr,
+      rur,
     },
   }
 }
